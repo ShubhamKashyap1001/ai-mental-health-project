@@ -34,8 +34,8 @@ export default function HomePage() {
       
       {/* 🔹 Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 text-center px-6 py-16">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-center typing-animation">
-      AI Mental Health Companion 🧠💙
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-center">
+      <span className="typing-animation">AI Mental Health Companion 🧠💙</span>
     </h1>
         <p className="text-lg md:text-xl max-w-2xl mb-10 text-gray-700 dark:text-gray-300">
           Your personal AI-powered companion to help you track emotions, 
@@ -57,22 +57,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 🔹 Features Section */}
-      <section className="bg-white dark:bg-gray-900 py-16 px-6 rounded-t-3xl shadow-inner transition">
-        <h2 className="text-3xl font-bold text-center mb-10">✨ How It Helps You</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              onClick={() => router.push(f.path)}
-              className="cursor-pointer bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-3">{f.icon} {f.title}</h3>
-              <p>{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     {/* 🔹 Features Section */}
+<section className="bg-white dark:bg-gray-900 py-16 px-6 rounded-t-3xl shadow-inner transition">
+  <h2 className="text-3xl font-bold text-center mb-10">✨ How It Helps You</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    {FEATURES.map((f) => (
+      <div
+        key={f.title}
+        onClick={() => router.push(f.path)}
+        className="cursor-pointer p-6 rounded-2xl shadow-lg bg-gray-50 dark:bg-gray-800 transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white"
+      >
+        <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+          {f.icon} {f.title}
+        </h3>
+        <p>{f.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* 🔹 Footer */}
       <footer className="bg-gray-200 dark:bg-black text-black dark:text-white text-center py-4 mt-10">

@@ -26,23 +26,31 @@ export default function Navbar() {
         >
           About Us
         </button>
-        {/* ✅ Scrolls directly to Home page features section */}
+        {/* Scrolls to Home page features section */}
         <a
           href="/#features"
           className="hover:underline"
         >
           Features
-        </Link>
+        </a>
       </div>
 
-      {/* Right side - Login + Dark Mode */}
+      {/* Right side - Dashboard + Login + Dark Mode */}
       <div className="flex items-center gap-4">
+        <button
+          onClick={() => router.push("/userdashboard")}
+          className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/80 transition"
+        >
+          Dashboard
+        </button>
+
         <button
           onClick={() => router.push("/login")}
           className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/80 transition"
         >
           Login
         </button>
+
         <ModeToggle />
       </div>
     </nav>
