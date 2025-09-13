@@ -21,13 +21,13 @@ export default function Navbar() {
       {/* Navigation Links */}
       <div className="flex items-center gap-6">
         <button
-          onClick={() => router.push("/AboutUs")}
+          onClick={() => router.push("/aboutus")}
           className="hover:underline"
         >
           About Us
         </button>
         {/* ✅ Scrolls directly to Home page features section */}
-        < Link
+        <a
           href="/#features"
           className="hover:underline"
         >

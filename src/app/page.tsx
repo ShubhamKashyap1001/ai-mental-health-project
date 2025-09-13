@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 
+
 export default function HomePage() {
   const router = useRouter();
 
@@ -33,9 +34,9 @@ export default function HomePage() {
       
       {/* 🔹 Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 text-center px-6 py-16">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-          AI Mental Health Companion 🧠💙
-        </h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-center typing-animation">
+      AI Mental Health Companion 🧠💙
+    </h1>
         <p className="text-lg md:text-xl max-w-2xl mb-10 text-gray-700 dark:text-gray-300">
           Your personal AI-powered companion to help you track emotions, 
           reduce stress, and promote better mental well-being through 

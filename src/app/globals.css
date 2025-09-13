@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: currentColor; }
+}
+
+.typing-animation {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid currentColor;
+  animation: typing 4s steps(40) infinite, blink 0.75s step-end infinite;
+}
