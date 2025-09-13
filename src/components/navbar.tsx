@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { ModeToggle } from "@/components/mode-toggle"
+import Link from "next/link"
 
 export default function Navbar() {
   const router = useRouter()
@@ -26,12 +27,12 @@ export default function Navbar() {
           About Us
         </button>
         {/* ✅ Scrolls directly to Home page features section */}
-        <a
+        < Link
           href="/#features"
           className="hover:underline"
         >
           Features
-        </a>
+        </Link>
       </div>
 
       {/* Right side - Login + Dark Mode */}
