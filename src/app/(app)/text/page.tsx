@@ -111,23 +111,32 @@ export default function TextPage() {
     setResult(null);
 
     try {
-      const res = await fetch("http://localhost:5000/api/text", {
+      const formData = new FormData();
+      formData.append("text", input);
+
+      const res = await fetch("https://5a0a4d5916c9.ngrok-free.app/analyze-text", {
         method: "POST",
         headers: { 
-          "Content-Type": "application/json",
-          "x-api-key": "node-secret" // ✅ authentication
+          "x-api-key": "hackathon123",  // ✅ required by backend
         },
-        body: JSON.stringify({ text: input }),
+        body: formData, // ✅ use FormData instead of JSON
       });
+
+      if (!res.ok) throw new Error("Request failed");
+
       const data = await res.json();
-      setResult(`Detected: ${data.label || "unknown"}`);
-    } catch {
+      setResult(
+        `Detected: ${data.label || "unknown"} (${Math.round(
+          (data.score || 0) * 100
+        )}%)\nSuggestion: ${data.suggestion}`
+      );
+    } catch (err) {
       setResult("❌ Error analyzing text");
     } finally {
       setLoading(false);
     }
   };
-
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
       <div className="bg-card p-6 rounded-2xl shadow-lg w-[400px] text-center">
@@ -149,11 +158,12 @@ export default function TextPage() {
       </div>
 
       {result && (
-        <div className="mt-6 bg-muted border-l-4 border-purple-500 p-4 rounded-xl shadow">
+        <div className="mt-6 bg-muted border-l-4 border-purple-500 p-4 rounded-xl shadow whitespace-pre-line">
           <p>{result}</p>
         </div>
       )}
     </div>
   );
 }
+
 
