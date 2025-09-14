@@ -2,9 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
 
-const BACKEND_URL = "https://fcc1baf2e6d0.ngrok-free.app/analyze-face";
+const BACKEND_URL = "https://868a507ef4f0.ngrok-free.app/analyze-face ";
 const BACKEND_API_KEY = "hackathon123";
-const GEMINI_API_KEY = "AIzaSyBIQk3XTN5OnR_RuQ15I8D6FDaATOC9exU";
+const GEMINI_API_KEY = "";
 const GEMINI_MODEL = "gemini-2.0-flash";
 
 type Msg = {
